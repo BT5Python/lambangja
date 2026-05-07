@@ -34,7 +34,7 @@ footer{margin-top:16px;display:flex;justify-content:space-between;align-items:ce
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 #progressBarContainer{width:100%;background:rgba(255,255,255,0.05);height:10px;border-radius:20px;overflow:hidden;margin-top:14px;display:none}
 #progressBar{height:100%;width:0%;background:#00ff00;transition:0.3s}
-.code-private {
+  .code-private {
   color: #ff0000; !important;
   font-weight: bold;
   animation: blinkFast 0.5s infinite;
@@ -127,7 +127,7 @@ footer{margin-top:16px;display:flex;justify-content:space-between;align-items:ce
 </div>
 
 <script>
-const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxfdTZfOlmKVrv6zb_qbEzLN1e6qR_AkTMrkEXbmAPFDXrpVYpD6B1LxI9T1ACITK5r8g/exec"; // ganti
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxdX2yn4eBWg60URl_483FbqsS7E_xb1yupZjFWJw7BakgQ_ftKXE04aX-sZWLvt2VcRg/exec"; // ganti
 
 let files = [];
 const drop = document.getElementById("drop");
@@ -241,7 +241,30 @@ function heartbeat(){
 
 setInterval(heartbeat, 2000);
 </script>
+  <script>
+function tampilkanTanggal() {
+  const now = new Date();
 
+  const hari = String(now.getDate()).padStart(2, '0');
+  const bulan = String(now.getMonth() + 1).padStart(2, '0');
+  const tahun = now.getFullYear();
+
+  const jam = String(now.getHours()).padStart(2, '0');
+  const menit = String(now.getMinutes()).padStart(2, '0');
+  const detik = String(now.getSeconds()).padStart(2, '0');
+
+  const format = `${hari}-${bulan}-${tahun} ${jam}:${menit}:${detik}`;
+
+  document.getElementById("tanggal").textContent = format;
+}
+
+// update tiap detik biar live
+setInterval(tampilkanTanggal, 1000);
+tampilkanTanggal();
+</script>
+   <div class="bottom-right">
+  evolution is my revolution
+</div>
 </body>
 </html>
 
